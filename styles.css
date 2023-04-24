@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  padding: 0 16px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: #000000;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.background::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background-image: url(https://d1fdloi71mui9q.cloudfront.net/VlhSQBNbSSK3Z4LosygC_sRj8B366YV898t4b);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.25;
+  filter: blur(50px);
+}
+
+.background::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background-image: url(https://assets.production.linktr.ee/profiles/_next/static/images/img-noise-256x256-36e9e9b0e280b6ea21eae10d9e697d74.png);
+  background-repeat: repeat;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+
+.switch {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 788px;
+  margin: 12px auto;
+  padding: 10px 8px;
+  border: 1px solid transparent;
+  background-color: transparent;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+.switch img {
+  display: none;
+  width: 44px;
+  border-radius: 50%;
+}
+
+.switch span {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.switch span img {
+  width: 16px;
+}
+
+.switch button {
+  justify-self: end;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.switch.scroll {
+  width: calc(100% - 24px);
+  grid-template-columns: 1fr auto 1fr;
+  padding: 8px;
+  border-color: rgb(235, 238, 241);
+  border-radius: 72px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: background-color 150ms ease 0s, -webkit-transform 150ms ease 0s, -webkit-backdrop-filter 150ms ease 0s;
+  backdrop-filter: blur(10px);
+}
+
+.switch.scroll img {
+  display: block;
+}
+
+.switch.scroll span {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 680px;
+  margin-inline: auto;
+  padding: 64px 0 32px;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.username {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.social a {
+  padding-inline: 8px;
+  transition: transform 0s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+}
+
+.social a:hover {
+  transform: scale(1.075);
+}
+
+.social a svg {
+  width: 32px;
+  height: 32px;
+  fill: rgb(255, 255, 255);
+}
+
+.links {
+  margin-top: 32px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  width: 100%;
+}
+
+.link-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: rgba(10, 11, 13, 0.08) 0px 2px 4px 0px;
+  transition: transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) 0s;
+  overflow: hidden;
+}
+
+.link-item:hover {
+  transform: scale(1.02);
+}
+
+.link-item img {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+}
+
+.link-item p {
+  color: white;
+  text-align: center;
+}
+
+.link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  min-width: 40px;
+  margin-right: 8px;
+  border-radius: 50%;
+  transition: all 120ms ease-out 0s;
+  opacity: 0;
+}
+
+.link-icon:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.link-icon svg {
+  fill: white;
+}
+
+.link-item:hover .link-icon {
+  opacity: 1;
+}
+
+@media (max-width: 680px) {
+  .switch {
+    padding: 10px 20px;
+  }
+
+  .link-item p {
+    font-size: 14px;
+  }
+}
